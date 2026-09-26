@@ -9,79 +9,54 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SubmissionsRouteImport } from './routes/submissions'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as McpRouteImport } from './routes/mcp'
-import { Route as AppRouteImport } from './routes/app'
-import { Route as AdsDottxtRouteImport } from './routes/ads[.]txt'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AuthResetPasswordRouteImport } from './routes/auth/reset-password'
-import { Route as AuthRegisterRouteImport } from './routes/auth/register'
-import { Route as AuthLoginRouteImport } from './routes/auth/login'
-import { Route as AuthForgotPasswordRouteImport } from './routes/auth/forgot-password'
-import { Route as AppWithdrawRouteImport } from './routes/app/withdraw'
-import { Route as AppWalletRouteImport } from './routes/app/wallet'
-import { Route as AppTasksRouteImport } from './routes/app/tasks'
-import { Route as AppSubmissionsRouteImport } from './routes/app/submissions'
-import { Route as AppSettingsRouteImport } from './routes/app/settings'
-import { Route as AppReferralsRouteImport } from './routes/app/referrals'
-import { Route as AppPublishRouteImport } from './routes/app/publish'
-import { Route as AppProfileRouteImport } from './routes/app/profile'
-import { Route as AppNotificationsRouteImport } from './routes/app/notifications'
-import { Route as AppDepositRouteImport } from './routes/app/deposit'
-import { Route as AppDashboardRouteImport } from './routes/app/dashboard'
-import { Route as AppAppealsRouteImport } from './routes/app/appeals'
-import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdsDottxtRouteImport } from './routes/ads[.]txt'
+import { Route as AppRouteImport } from './routes/app'
+import { Route as McpRouteImport } from './routes/mcp'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SubmissionsRouteImport } from './routes/submissions'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
-import { Route as Skabdullah_999_sgAdminUsersRouteImport } from './routes/skabdullah_999_sg.admin.users'
-import { Route as Skabdullah_999_sgAdminTutorialsRouteImport } from './routes/skabdullah_999_sg.admin.tutorials'
-import { Route as Skabdullah_999_sgAdminTasksRouteImport } from './routes/skabdullah_999_sg.admin.tasks'
-import { Route as Skabdullah_999_sgAdminSupportRouteImport } from './routes/skabdullah_999_sg.admin.support'
-import { Route as Skabdullah_999_sgAdminSettingsRouteImport } from './routes/skabdullah_999_sg.admin.settings'
-import { Route as Skabdullah_999_sgAdminSecurityLogsRouteImport } from './routes/skabdullah_999_sg.admin.security-logs'
-import { Route as Skabdullah_999_sgAdminPublishersRouteImport } from './routes/skabdullah_999_sg.admin.publishers'
-import { Route as Skabdullah_999_sgAdminPaymentsRouteImport } from './routes/skabdullah_999_sg.admin.payments'
-import { Route as Skabdullah_999_sgAdminNotificationsRouteImport } from './routes/skabdullah_999_sg.admin.notifications'
-import { Route as Skabdullah_999_sgAdminLoginRouteImport } from './routes/skabdullah_999_sg.admin.login'
-import { Route as Skabdullah_999_sgAdminDashboardRouteImport } from './routes/skabdullah_999_sg.admin.dashboard'
-import { Route as Skabdullah_999_sgAdminAppealsRouteImport } from './routes/skabdullah_999_sg.admin.appeals'
-import { Route as AppTasksTaskIdRouteImport } from './routes/app/tasks.$taskId'
-import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
+import { Route as AppAppealsRouteImport } from './routes/app/appeals'
+import { Route as AppDashboardRouteImport } from './routes/app/dashboard'
+import { Route as AppDepositRouteImport } from './routes/app/deposit'
+import { Route as AppNotificationsRouteImport } from './routes/app/notifications'
+import { Route as AppProfileRouteImport } from './routes/app/profile'
+import { Route as AppPublishRouteImport } from './routes/app/publish'
+import { Route as AppReferralsRouteImport } from './routes/app/referrals'
+import { Route as AppSettingsRouteImport } from './routes/app/settings'
+import { Route as AppSubmissionsRouteImport } from './routes/app/submissions'
+import { Route as AppTasksRouteImport } from './routes/app/tasks'
+import { Route as AppWalletRouteImport } from './routes/app/wallet'
+import { Route as AppWithdrawRouteImport } from './routes/app/withdraw'
+import { Route as AuthForgotPasswordRouteImport } from './routes/auth/forgot-password'
+import { Route as AuthLoginRouteImport } from './routes/auth/login'
+import { Route as AuthRegisterRouteImport } from './routes/auth/register'
+import { Route as AuthResetPasswordRouteImport } from './routes/auth/reset-password'
 import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
-import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
-import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
+import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
+import { Route as AppTasksTaskIdRouteImport } from './routes/app/tasks.$taskId'
+import { Route as Skabdullah_999_sgAdminAppealsRouteImport } from './routes/skabdullah_999_sg.admin.appeals'
+import { Route as Skabdullah_999_sgAdminDashboardRouteImport } from './routes/skabdullah_999_sg.admin.dashboard'
+import { Route as Skabdullah_999_sgAdminLoginRouteImport } from './routes/skabdullah_999_sg.admin.login'
+import { Route as Skabdullah_999_sgAdminNotificationsRouteImport } from './routes/skabdullah_999_sg.admin.notifications'
+import { Route as Skabdullah_999_sgAdminPaymentsRouteImport } from './routes/skabdullah_999_sg.admin.payments'
+import { Route as Skabdullah_999_sgAdminPublishersRouteImport } from './routes/skabdullah_999_sg.admin.publishers'
+import { Route as Skabdullah_999_sgAdminSecurityLogsRouteImport } from './routes/skabdullah_999_sg.admin.security-logs'
+import { Route as Skabdullah_999_sgAdminSettingsRouteImport } from './routes/skabdullah_999_sg.admin.settings'
+import { Route as Skabdullah_999_sgAdminSupportRouteImport } from './routes/skabdullah_999_sg.admin.support'
+import { Route as Skabdullah_999_sgAdminTasksRouteImport } from './routes/skabdullah_999_sg.admin.tasks'
+import { Route as Skabdullah_999_sgAdminTutorialsRouteImport } from './routes/skabdullah_999_sg.admin.tutorials'
+import { Route as Skabdullah_999_sgAdminUsersRouteImport } from './routes/skabdullah_999_sg.admin.users'
 import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
+import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
+import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
-const SubmissionsRoute = SubmissionsRouteImport.update({
-  id: '/submissions',
-  path: '/submissions',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const McpRoute = McpRouteImport.update({
-  id: '/mcp',
-  path: '/mcp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AppRoute = AppRouteImport.update({
-  id: '/app',
-  path: '/app',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdsDottxtRoute = AdsDottxtRouteImport.update({
-  id: '/ads.txt',
-  path: '/ads.txt',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -89,79 +64,51 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AdsDottxtRoute = AdsDottxtRouteImport.update({
+  id: '/ads.txt',
+  path: '/ads.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
-  id: '/auth/reset-password',
-  path: '/auth/reset-password',
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthRegisterRoute = AuthRegisterRouteImport.update({
-  id: '/auth/register',
-  path: '/auth/register',
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthLoginRoute = AuthLoginRouteImport.update({
-  id: '/auth/login',
-  path: '/auth/login',
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
-  id: '/auth/forgot-password',
-  path: '/auth/forgot-password',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppWithdrawRoute = AppWithdrawRouteImport.update({
-  id: '/withdraw',
-  path: '/withdraw',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppWalletRoute = AppWalletRouteImport.update({
-  id: '/wallet',
-  path: '/wallet',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppTasksRoute = AppTasksRouteImport.update({
-  id: '/tasks',
-  path: '/tasks',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppSubmissionsRoute = AppSubmissionsRouteImport.update({
+const SubmissionsRoute = SubmissionsRouteImport.update({
   id: '/submissions',
   path: '/submissions',
-  getParentRoute: () => AppRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AppSettingsRoute = AppSettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppReferralsRoute = AppReferralsRouteImport.update({
-  id: '/referrals',
-  path: '/referrals',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppPublishRoute = AppPublishRouteImport.update({
-  id: '/publish',
-  path: '/publish',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppProfileRoute = AppProfileRouteImport.update({
-  id: '/profile',
-  path: '/profile',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppNotificationsRoute = AppNotificationsRouteImport.update({
-  id: '/notifications',
-  path: '/notifications',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppDepositRoute = AppDepositRouteImport.update({
-  id: '/deposit',
-  path: '/deposit',
+const Char91DotmcpChar93ListToolsRoute =
+  Char91DotmcpChar93ListToolsRouteImport.update({
+    id: '/.mcp/list-tools',
+    path: '/.mcp/list-tools',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AppAppealsRoute = AppAppealsRouteImport.update({
+  id: '/appeals',
+  path: '/appeals',
   getParentRoute: () => AppRoute,
 } as any)
 const AppDashboardRoute = AppDashboardRouteImport.update({
@@ -169,81 +116,96 @@ const AppDashboardRoute = AppDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AppRoute,
 } as any)
-const AppAppealsRoute = AppAppealsRouteImport.update({
-  id: '/appeals',
-  path: '/appeals',
+const AppDepositRoute = AppDepositRouteImport.update({
+  id: '/deposit',
+  path: '/deposit',
   getParentRoute: () => AppRoute,
 } as any)
-const Char91DotwellKnownChar93OauthProtectedResourceRoute =
-  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
-    id: '/.well-known/oauth-protected-resource',
-    path: '/.well-known/oauth-protected-resource',
+const AppNotificationsRoute = AppNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProfileRoute = AppProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPublishRoute = AppPublishRouteImport.update({
+  id: '/publish',
+  path: '/publish',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppReferralsRoute = AppReferralsRouteImport.update({
+  id: '/referrals',
+  path: '/referrals',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSubmissionsRoute = AppSubmissionsRouteImport.update({
+  id: '/submissions',
+  path: '/submissions',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTasksRoute = AppTasksRouteImport.update({
+  id: '/tasks',
+  path: '/tasks',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppWalletRoute = AppWalletRouteImport.update({
+  id: '/wallet',
+  path: '/wallet',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppWithdrawRoute = AppWithdrawRouteImport.update({
+  id: '/withdraw',
+  path: '/withdraw',
+  getParentRoute: () => AppRoute,
+} as any)
+const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
+  id: '/auth/forgot-password',
+  path: '/auth/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRegisterRoute = AuthRegisterRouteImport.update({
+  id: '/auth/register',
+  path: '/auth/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthResetPasswordRoute = AuthResetPasswordRouteImport.update({
+  id: '/auth/reset-password',
+  path: '/auth/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
+  id: '/.lovable/oauth/consent',
+  path: '/.lovable/oauth/consent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Char91DotmcpChar93InvokeToolToolRoute =
+  Char91DotmcpChar93InvokeToolToolRouteImport.update({
+    id: '/.mcp/invoke-tool/$tool',
+    path: '/.mcp/invoke-tool/$tool',
     getParentRoute: () => rootRouteImport,
   } as any)
-const Char91DotmcpChar93ListToolsRoute =
-  Char91DotmcpChar93ListToolsRouteImport.update({
-    id: '/.mcp/list-tools',
-    path: '/.mcp/list-tools',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminUsersRoute =
-  Skabdullah_999_sgAdminUsersRouteImport.update({
-    id: '/skabdullah_999_sg/admin/users',
-    path: '/skabdullah_999_sg/admin/users',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminTutorialsRoute =
-  Skabdullah_999_sgAdminTutorialsRouteImport.update({
-    id: '/skabdullah_999_sg/admin/tutorials',
-    path: '/skabdullah_999_sg/admin/tutorials',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminTasksRoute =
-  Skabdullah_999_sgAdminTasksRouteImport.update({
-    id: '/skabdullah_999_sg/admin/tasks',
-    path: '/skabdullah_999_sg/admin/tasks',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminSupportRoute =
-  Skabdullah_999_sgAdminSupportRouteImport.update({
-    id: '/skabdullah_999_sg/admin/support',
-    path: '/skabdullah_999_sg/admin/support',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminSettingsRoute =
-  Skabdullah_999_sgAdminSettingsRouteImport.update({
-    id: '/skabdullah_999_sg/admin/settings',
-    path: '/skabdullah_999_sg/admin/settings',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminSecurityLogsRoute =
-  Skabdullah_999_sgAdminSecurityLogsRouteImport.update({
-    id: '/skabdullah_999_sg/admin/security-logs',
-    path: '/skabdullah_999_sg/admin/security-logs',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminPublishersRoute =
-  Skabdullah_999_sgAdminPublishersRouteImport.update({
-    id: '/skabdullah_999_sg/admin/publishers',
-    path: '/skabdullah_999_sg/admin/publishers',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminPaymentsRoute =
-  Skabdullah_999_sgAdminPaymentsRouteImport.update({
-    id: '/skabdullah_999_sg/admin/payments',
-    path: '/skabdullah_999_sg/admin/payments',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminNotificationsRoute =
-  Skabdullah_999_sgAdminNotificationsRouteImport.update({
-    id: '/skabdullah_999_sg/admin/notifications',
-    path: '/skabdullah_999_sg/admin/notifications',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const Skabdullah_999_sgAdminLoginRoute =
-  Skabdullah_999_sgAdminLoginRouteImport.update({
-    id: '/skabdullah_999_sg/admin/login',
-    path: '/skabdullah_999_sg/admin/login',
+const AppTasksTaskIdRoute = AppTasksTaskIdRouteImport.update({
+  id: '/$taskId',
+  path: '/$taskId',
+  getParentRoute: () => AppTasksRoute,
+} as any)
+const Skabdullah_999_sgAdminAppealsRoute =
+  Skabdullah_999_sgAdminAppealsRouteImport.update({
+    id: '/skabdullah_999_sg/admin/appeals',
+    path: '/skabdullah_999_sg/admin/appeals',
     getParentRoute: () => rootRouteImport,
   } as any)
 const Skabdullah_999_sgAdminDashboardRoute =
@@ -252,26 +214,74 @@ const Skabdullah_999_sgAdminDashboardRoute =
     path: '/skabdullah_999_sg/admin/dashboard',
     getParentRoute: () => rootRouteImport,
   } as any)
-const Skabdullah_999_sgAdminAppealsRoute =
-  Skabdullah_999_sgAdminAppealsRouteImport.update({
-    id: '/skabdullah_999_sg/admin/appeals',
-    path: '/skabdullah_999_sg/admin/appeals',
+const Skabdullah_999_sgAdminLoginRoute =
+  Skabdullah_999_sgAdminLoginRouteImport.update({
+    id: '/skabdullah_999_sg/admin/login',
+    path: '/skabdullah_999_sg/admin/login',
     getParentRoute: () => rootRouteImport,
   } as any)
-const AppTasksTaskIdRoute = AppTasksTaskIdRouteImport.update({
-  id: '/$taskId',
-  path: '/$taskId',
-  getParentRoute: () => AppTasksRoute,
+const Skabdullah_999_sgAdminNotificationsRoute =
+  Skabdullah_999_sgAdminNotificationsRouteImport.update({
+    id: '/skabdullah_999_sg/admin/notifications',
+    path: '/skabdullah_999_sg/admin/notifications',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Skabdullah_999_sgAdminPaymentsRoute =
+  Skabdullah_999_sgAdminPaymentsRouteImport.update({
+    id: '/skabdullah_999_sg/admin/payments',
+    path: '/skabdullah_999_sg/admin/payments',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Skabdullah_999_sgAdminPublishersRoute =
+  Skabdullah_999_sgAdminPublishersRouteImport.update({
+    id: '/skabdullah_999_sg/admin/publishers',
+    path: '/skabdullah_999_sg/admin/publishers',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Skabdullah_999_sgAdminSecurityLogsRoute =
+  Skabdullah_999_sgAdminSecurityLogsRouteImport.update({
+    id: '/skabdullah_999_sg/admin/security-logs',
+    path: '/skabdullah_999_sg/admin/security-logs',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Skabdullah_999_sgAdminSettingsRoute =
+  Skabdullah_999_sgAdminSettingsRouteImport.update({
+    id: '/skabdullah_999_sg/admin/settings',
+    path: '/skabdullah_999_sg/admin/settings',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Skabdullah_999_sgAdminSupportRoute =
+  Skabdullah_999_sgAdminSupportRouteImport.update({
+    id: '/skabdullah_999_sg/admin/support',
+    path: '/skabdullah_999_sg/admin/support',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Skabdullah_999_sgAdminTasksRoute =
+  Skabdullah_999_sgAdminTasksRouteImport.update({
+    id: '/skabdullah_999_sg/admin/tasks',
+    path: '/skabdullah_999_sg/admin/tasks',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Skabdullah_999_sgAdminTutorialsRoute =
+  Skabdullah_999_sgAdminTutorialsRouteImport.update({
+    id: '/skabdullah_999_sg/admin/tutorials',
+    path: '/skabdullah_999_sg/admin/tutorials',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Skabdullah_999_sgAdminUsersRoute =
+  Skabdullah_999_sgAdminUsersRouteImport.update({
+    id: '/skabdullah_999_sg/admin/users',
+    path: '/skabdullah_999_sg/admin/users',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
+  id: '/lovable/email/auth/preview',
+  path: '/lovable/email/auth/preview',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const Char91DotmcpChar93InvokeToolToolRoute =
-  Char91DotmcpChar93InvokeToolToolRouteImport.update({
-    id: '/.mcp/invoke-tool/$tool',
-    path: '/.mcp/invoke-tool/$tool',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
-  id: '/.lovable/oauth/consent',
-  path: '/.lovable/oauth/consent',
+const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
+  id: '/lovable/email/auth/webhook',
+  path: '/lovable/email/auth/webhook',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LovableEmailQueueProcessRoute =
@@ -280,16 +290,6 @@ const LovableEmailQueueProcessRoute =
     path: '/lovable/email/queue/process',
     getParentRoute: () => rootRouteImport,
   } as any)
-const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
-  id: '/lovable/email/auth/webhook',
-  path: '/lovable/email/auth/webhook',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
-  id: '/lovable/email/auth/preview',
-  path: '/lovable/email/auth/preview',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -607,46 +607,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/submissions': {
-      id: '/submissions'
-      path: '/submissions'
-      fullPath: '/submissions'
-      preLoaderRoute: typeof SubmissionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mcp': {
-      id: '/mcp'
-      path: '/mcp'
-      fullPath: '/mcp'
-      preLoaderRoute: typeof McpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/app': {
-      id: '/app'
-      path: '/app'
-      fullPath: '/app'
-      preLoaderRoute: typeof AppRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ads.txt': {
-      id: '/ads.txt'
-      path: '/ads.txt'
-      fullPath: '/ads.txt'
-      preLoaderRoute: typeof AdsDottxtRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -656,130 +621,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/ads.txt': {
+      id: '/ads.txt'
+      path: '/ads.txt'
+      fullPath: '/ads.txt'
+      preLoaderRoute: typeof AdsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/auth/reset-password': {
-      id: '/auth/reset-password'
-      path: '/auth/reset-password'
-      fullPath: '/auth/reset-password'
-      preLoaderRoute: typeof AuthResetPasswordRouteImport
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/auth/register': {
-      id: '/auth/register'
-      path: '/auth/register'
-      fullPath: '/auth/register'
-      preLoaderRoute: typeof AuthRegisterRouteImport
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/auth/login': {
-      id: '/auth/login'
-      path: '/auth/login'
-      fullPath: '/auth/login'
-      preLoaderRoute: typeof AuthLoginRouteImport
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/auth/forgot-password': {
-      id: '/auth/forgot-password'
-      path: '/auth/forgot-password'
-      fullPath: '/auth/forgot-password'
-      preLoaderRoute: typeof AuthForgotPasswordRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/app/withdraw': {
-      id: '/app/withdraw'
-      path: '/withdraw'
-      fullPath: '/app/withdraw'
-      preLoaderRoute: typeof AppWithdrawRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/wallet': {
-      id: '/app/wallet'
-      path: '/wallet'
-      fullPath: '/app/wallet'
-      preLoaderRoute: typeof AppWalletRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/tasks': {
-      id: '/app/tasks'
-      path: '/tasks'
-      fullPath: '/app/tasks'
-      preLoaderRoute: typeof AppTasksRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/submissions': {
-      id: '/app/submissions'
+    '/submissions': {
+      id: '/submissions'
       path: '/submissions'
-      fullPath: '/app/submissions'
-      preLoaderRoute: typeof AppSubmissionsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/settings': {
-      id: '/app/settings'
-      path: '/settings'
-      fullPath: '/app/settings'
-      preLoaderRoute: typeof AppSettingsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/referrals': {
-      id: '/app/referrals'
-      path: '/referrals'
-      fullPath: '/app/referrals'
-      preLoaderRoute: typeof AppReferralsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/publish': {
-      id: '/app/publish'
-      path: '/publish'
-      fullPath: '/app/publish'
-      preLoaderRoute: typeof AppPublishRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/profile': {
-      id: '/app/profile'
-      path: '/profile'
-      fullPath: '/app/profile'
-      preLoaderRoute: typeof AppProfileRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/notifications': {
-      id: '/app/notifications'
-      path: '/notifications'
-      fullPath: '/app/notifications'
-      preLoaderRoute: typeof AppNotificationsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/deposit': {
-      id: '/app/deposit'
-      path: '/deposit'
-      fullPath: '/app/deposit'
-      preLoaderRoute: typeof AppDepositRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/dashboard': {
-      id: '/app/dashboard'
-      path: '/dashboard'
-      fullPath: '/app/dashboard'
-      preLoaderRoute: typeof AppDashboardRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/appeals': {
-      id: '/app/appeals'
-      path: '/appeals'
-      fullPath: '/app/appeals'
-      preLoaderRoute: typeof AppAppealsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/.well-known/oauth-protected-resource': {
-      id: '/.well-known/oauth-protected-resource'
-      path: '/.well-known/oauth-protected-resource'
-      fullPath: '/.well-known/oauth-protected-resource'
-      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      fullPath: '/submissions'
+      preLoaderRoute: typeof SubmissionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/.mcp/list-tools': {
@@ -789,102 +670,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91DotmcpChar93ListToolsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/skabdullah_999_sg/admin/users': {
-      id: '/skabdullah_999_sg/admin/users'
-      path: '/skabdullah_999_sg/admin/users'
-      fullPath: '/skabdullah_999_sg/admin/users'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminUsersRouteImport
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/skabdullah_999_sg/admin/tutorials': {
-      id: '/skabdullah_999_sg/admin/tutorials'
-      path: '/skabdullah_999_sg/admin/tutorials'
-      fullPath: '/skabdullah_999_sg/admin/tutorials'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminTutorialsRouteImport
+    '/app/appeals': {
+      id: '/app/appeals'
+      path: '/appeals'
+      fullPath: '/app/appeals'
+      preLoaderRoute: typeof AppAppealsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/dashboard': {
+      id: '/app/dashboard'
+      path: '/dashboard'
+      fullPath: '/app/dashboard'
+      preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/deposit': {
+      id: '/app/deposit'
+      path: '/deposit'
+      fullPath: '/app/deposit'
+      preLoaderRoute: typeof AppDepositRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notifications': {
+      id: '/app/notifications'
+      path: '/notifications'
+      fullPath: '/app/notifications'
+      preLoaderRoute: typeof AppNotificationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/profile': {
+      id: '/app/profile'
+      path: '/profile'
+      fullPath: '/app/profile'
+      preLoaderRoute: typeof AppProfileRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/publish': {
+      id: '/app/publish'
+      path: '/publish'
+      fullPath: '/app/publish'
+      preLoaderRoute: typeof AppPublishRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/referrals': {
+      id: '/app/referrals'
+      path: '/referrals'
+      fullPath: '/app/referrals'
+      preLoaderRoute: typeof AppReferralsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings': {
+      id: '/app/settings'
+      path: '/settings'
+      fullPath: '/app/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/submissions': {
+      id: '/app/submissions'
+      path: '/submissions'
+      fullPath: '/app/submissions'
+      preLoaderRoute: typeof AppSubmissionsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/tasks': {
+      id: '/app/tasks'
+      path: '/tasks'
+      fullPath: '/app/tasks'
+      preLoaderRoute: typeof AppTasksRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/wallet': {
+      id: '/app/wallet'
+      path: '/wallet'
+      fullPath: '/app/wallet'
+      preLoaderRoute: typeof AppWalletRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/withdraw': {
+      id: '/app/withdraw'
+      path: '/withdraw'
+      fullPath: '/app/withdraw'
+      preLoaderRoute: typeof AppWithdrawRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/auth/forgot-password': {
+      id: '/auth/forgot-password'
+      path: '/auth/forgot-password'
+      fullPath: '/auth/forgot-password'
+      preLoaderRoute: typeof AuthForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/skabdullah_999_sg/admin/tasks': {
-      id: '/skabdullah_999_sg/admin/tasks'
-      path: '/skabdullah_999_sg/admin/tasks'
-      fullPath: '/skabdullah_999_sg/admin/tasks'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminTasksRouteImport
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/skabdullah_999_sg/admin/support': {
-      id: '/skabdullah_999_sg/admin/support'
-      path: '/skabdullah_999_sg/admin/support'
-      fullPath: '/skabdullah_999_sg/admin/support'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminSupportRouteImport
+    '/auth/register': {
+      id: '/auth/register'
+      path: '/auth/register'
+      fullPath: '/auth/register'
+      preLoaderRoute: typeof AuthRegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/skabdullah_999_sg/admin/settings': {
-      id: '/skabdullah_999_sg/admin/settings'
-      path: '/skabdullah_999_sg/admin/settings'
-      fullPath: '/skabdullah_999_sg/admin/settings'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminSettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/skabdullah_999_sg/admin/security-logs': {
-      id: '/skabdullah_999_sg/admin/security-logs'
-      path: '/skabdullah_999_sg/admin/security-logs'
-      fullPath: '/skabdullah_999_sg/admin/security-logs'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminSecurityLogsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/skabdullah_999_sg/admin/publishers': {
-      id: '/skabdullah_999_sg/admin/publishers'
-      path: '/skabdullah_999_sg/admin/publishers'
-      fullPath: '/skabdullah_999_sg/admin/publishers'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminPublishersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/skabdullah_999_sg/admin/payments': {
-      id: '/skabdullah_999_sg/admin/payments'
-      path: '/skabdullah_999_sg/admin/payments'
-      fullPath: '/skabdullah_999_sg/admin/payments'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminPaymentsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/skabdullah_999_sg/admin/notifications': {
-      id: '/skabdullah_999_sg/admin/notifications'
-      path: '/skabdullah_999_sg/admin/notifications'
-      fullPath: '/skabdullah_999_sg/admin/notifications'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminNotificationsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/skabdullah_999_sg/admin/login': {
-      id: '/skabdullah_999_sg/admin/login'
-      path: '/skabdullah_999_sg/admin/login'
-      fullPath: '/skabdullah_999_sg/admin/login'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminLoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/skabdullah_999_sg/admin/dashboard': {
-      id: '/skabdullah_999_sg/admin/dashboard'
-      path: '/skabdullah_999_sg/admin/dashboard'
-      fullPath: '/skabdullah_999_sg/admin/dashboard'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminDashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/skabdullah_999_sg/admin/appeals': {
-      id: '/skabdullah_999_sg/admin/appeals'
-      path: '/skabdullah_999_sg/admin/appeals'
-      fullPath: '/skabdullah_999_sg/admin/appeals'
-      preLoaderRoute: typeof Skabdullah_999_sgAdminAppealsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/app/tasks/$taskId': {
-      id: '/app/tasks/$taskId'
-      path: '/$taskId'
-      fullPath: '/app/tasks/$taskId'
-      preLoaderRoute: typeof AppTasksTaskIdRouteImport
-      parentRoute: typeof AppTasksRoute
-    }
-    '/.mcp/invoke-tool/$tool': {
-      id: '/.mcp/invoke-tool/$tool'
-      path: '/.mcp/invoke-tool/$tool'
-      fullPath: '/.mcp/invoke-tool/$tool'
-      preLoaderRoute: typeof Char91DotmcpChar93InvokeToolToolRouteImport
+    '/auth/reset-password': {
+      id: '/auth/reset-password'
+      path: '/auth/reset-password'
+      fullPath: '/auth/reset-password'
+      preLoaderRoute: typeof AuthResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/.lovable/oauth/consent': {
@@ -894,11 +796,109 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DotlovableOauthConsentRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lovable/email/queue/process': {
-      id: '/lovable/email/queue/process'
-      path: '/lovable/email/queue/process'
-      fullPath: '/lovable/email/queue/process'
-      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
+    '/.mcp/invoke-tool/$tool': {
+      id: '/.mcp/invoke-tool/$tool'
+      path: '/.mcp/invoke-tool/$tool'
+      fullPath: '/.mcp/invoke-tool/$tool'
+      preLoaderRoute: typeof Char91DotmcpChar93InvokeToolToolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/tasks/$taskId': {
+      id: '/app/tasks/$taskId'
+      path: '/$taskId'
+      fullPath: '/app/tasks/$taskId'
+      preLoaderRoute: typeof AppTasksTaskIdRouteImport
+      parentRoute: typeof AppTasksRoute
+    }
+    '/skabdullah_999_sg/admin/appeals': {
+      id: '/skabdullah_999_sg/admin/appeals'
+      path: '/skabdullah_999_sg/admin/appeals'
+      fullPath: '/skabdullah_999_sg/admin/appeals'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminAppealsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/dashboard': {
+      id: '/skabdullah_999_sg/admin/dashboard'
+      path: '/skabdullah_999_sg/admin/dashboard'
+      fullPath: '/skabdullah_999_sg/admin/dashboard'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/login': {
+      id: '/skabdullah_999_sg/admin/login'
+      path: '/skabdullah_999_sg/admin/login'
+      fullPath: '/skabdullah_999_sg/admin/login'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/notifications': {
+      id: '/skabdullah_999_sg/admin/notifications'
+      path: '/skabdullah_999_sg/admin/notifications'
+      fullPath: '/skabdullah_999_sg/admin/notifications'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/payments': {
+      id: '/skabdullah_999_sg/admin/payments'
+      path: '/skabdullah_999_sg/admin/payments'
+      fullPath: '/skabdullah_999_sg/admin/payments'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminPaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/publishers': {
+      id: '/skabdullah_999_sg/admin/publishers'
+      path: '/skabdullah_999_sg/admin/publishers'
+      fullPath: '/skabdullah_999_sg/admin/publishers'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminPublishersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/security-logs': {
+      id: '/skabdullah_999_sg/admin/security-logs'
+      path: '/skabdullah_999_sg/admin/security-logs'
+      fullPath: '/skabdullah_999_sg/admin/security-logs'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminSecurityLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/settings': {
+      id: '/skabdullah_999_sg/admin/settings'
+      path: '/skabdullah_999_sg/admin/settings'
+      fullPath: '/skabdullah_999_sg/admin/settings'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/support': {
+      id: '/skabdullah_999_sg/admin/support'
+      path: '/skabdullah_999_sg/admin/support'
+      fullPath: '/skabdullah_999_sg/admin/support'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/tasks': {
+      id: '/skabdullah_999_sg/admin/tasks'
+      path: '/skabdullah_999_sg/admin/tasks'
+      fullPath: '/skabdullah_999_sg/admin/tasks'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminTasksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/tutorials': {
+      id: '/skabdullah_999_sg/admin/tutorials'
+      path: '/skabdullah_999_sg/admin/tutorials'
+      fullPath: '/skabdullah_999_sg/admin/tutorials'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminTutorialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skabdullah_999_sg/admin/users': {
+      id: '/skabdullah_999_sg/admin/users'
+      path: '/skabdullah_999_sg/admin/users'
+      fullPath: '/skabdullah_999_sg/admin/users'
+      preLoaderRoute: typeof Skabdullah_999_sgAdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/auth/preview': {
+      id: '/lovable/email/auth/preview'
+      path: '/lovable/email/auth/preview'
+      fullPath: '/lovable/email/auth/preview'
+      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable/email/auth/webhook': {
@@ -908,11 +908,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lovable/email/auth/preview': {
-      id: '/lovable/email/auth/preview'
-      path: '/lovable/email/auth/preview'
-      fullPath: '/lovable/email/auth/preview'
-      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
+    '/lovable/email/queue/process': {
+      id: '/lovable/email/queue/process'
+      path: '/lovable/email/queue/process'
+      fullPath: '/lovable/email/queue/process'
+      preLoaderRoute: typeof LovableEmailQueueProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
