@@ -35,8 +35,11 @@ function LoginPage() {
     try {
       const res = await bootstrap({ data: { username, password } });
       if (!res.ok || !res.email) {
-        setError("Invalid username or password.");
-        // Log security event
+        setError(
+          res.error && res.error !== "Invalid credentials"
+            ? res.error
+            : "Invalid username or password.",
+        );
         await supabase.from("security_logs").insert({
           username, action: "login_failed", suspicious: true,
         }).then(() => {});
