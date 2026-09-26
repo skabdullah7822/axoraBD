@@ -3,9 +3,9 @@ import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { z } from "zod";
 
 // Credentials are read from server-side secrets — never hardcoded.
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME?.trim();
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL?.trim();
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD?.trim();
 
 export const bootstrapAdmin = createServerFn({ method: "POST" })
   .inputValidator((d: { username: string; password: string }) =>
