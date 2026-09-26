@@ -19,9 +19,21 @@ export const bootstrapAdmin = createServerFn({ method: "POST" })
       return { ok: false as const, email: null };
     }
 
-    // Check if user exists
-    const { data: list } = await supabaseAdmin.auth.admin.listUsers();
-    const existing = list?.users?.find((u) => u.email === ADMIN_EMAIL);
+    const normalizedUsername = data.username.trim();
+    const normalizedPassword = data.password;
+    if (normalizedUsername !== ADMIN_USERNAME.trim() || normalizedPassword !== ADMIN_PASSWORD) {
+      return { ok: false as const, email: null };
+    }
+
+    // Find the configured account and keep its password synchronized with the
+    // protected project variable so the first login also repairs old bootstrap data.
+    const { data: list, error: listError } = await supabaseAdmin.auth.admin.listUsers();
+    if (listError) {
+      return { ok: false as const, email: null, error: listError.message };
+    }
+    const existing = list.users.find(
+      (user) => user.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase(),
+    );
 
     let userId = existing?.id;
     if (!existing) {
@@ -34,13 +46,23 @@ export const bootstrapAdmin = createServerFn({ method: "POST" })
         return { ok: false as const, email: null, error: error?.message };
       }
       userId = created.user.id;
+    } else {
+      const { error } = await supabaseAdmin.auth.admin.updateUserById(existing.id, {
+        password: ADMIN_PASSWORD,
+        email_confirm: true,
+      });
+      if (error) {
+        return { ok: false as const, email: null, error: error.message };
+      }
     }
 
-    if (userId) {
-      // Ensure admin role
-      await supabaseAdmin
-        .from("user_roles")
-        .upsert({ user_id: userId, role: "admin" }, { onConflict: "user_id,role" });
+    if (!userId) return { ok: false as const, email: null };
+
+    const { error: roleError } = await supabaseAdmin
+      .from("user_roles")
+      .upsert({ user_id: userId, role: "admin" }, { onConflict: "user_id,role" });
+    if (roleError) {
+      return { ok: false as const, email: null, error: roleError.message };
     }
 
     return { ok: true as const, email: ADMIN_EMAIL };
