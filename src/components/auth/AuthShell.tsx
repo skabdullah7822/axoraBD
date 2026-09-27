@@ -277,7 +277,7 @@ function RegisterForm({ referral }: { referral?: string }) {
       else navigate({ to: "/app/dashboard" });
     } catch (e: any) {
       const msg = e?.message ?? "Sign up failed";
-      if (/profiles_username_unique/i.test(msg)) { setError("This username is already taken"); setStep(0); }
+      if (/profiles_username_unique|username already taken/i.test(msg)) { setError("This username is already taken"); setStep(0); }
       else if (/profiles_email_unique/i.test(msg) || /already registered/i.test(msg)) { setError("An account with this email already exists"); setStep(1); }
       else if (/profiles_phone_unique/i.test(msg)) { setError("An account with this phone number already exists"); setStep(1); }
       else setError(msg);
