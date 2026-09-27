@@ -70,11 +70,27 @@ function TaskDetailPage() {
       }).select().single();
       if (subErr) throw subErr;
 
-      for (const f of files) {
-        const path = `${session.user.id}/${sub.id}/${Date.now()}-${f.name}`;
-        const { error: upErr } = await supabase.storage.from("proofs").upload(path, f);
-        if (upErr) throw upErr;
-        await supabase.from("task_submission_proofs").insert({ submission_id: sub.id, image_url: path });
+      const uploadedPaths: string[] = [];
+      try {
+        for (const f of files) {
+          if (f.size > 5 * 1024 * 1024) throw new Error("Each image must be under 5MB");
+          if (!f.type.startsWith("image/")) throw new Error("Only image files are allowed");
+          const safeName = f.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+          const path = `${session.user.id}/${sub.id}/${Date.now()}-${safeName}`;
+          const { error: upErr } = await supabase.storage.from("proofs").upload(path, f, {
+            contentType: f.type,
+            cacheControl: "3600",
+            upsert: false,
+          });
+          if (upErr) throw new Error(upErr.message || "Proof image upload failed");
+          uploadedPaths.push(path);
+          const { error: proofErr } = await supabase.from("task_submission_proofs").insert({ submission_id: sub.id, image_url: path });
+          if (proofErr) throw proofErr;
+        }
+      } catch (uploadError) {
+        if (uploadedPaths.length) await supabase.storage.from("proofs").remove(uploadedPaths);
+        await supabase.from("task_submissions").delete().eq("id", sub.id).eq("user_id", session.user.id);
+        throw uploadError;
       }
       setFiles([]);
       setProofText("");

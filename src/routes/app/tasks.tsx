@@ -390,15 +390,29 @@ function SubmissionDialog({ task, open, onOpenChange, onSuccess }: {
 
       if (subErr) throw subErr;
 
-      for (const f of proofFields) {
-        if (f.type !== "image" || !files[f.id]) continue;
-        const file = files[f.id];
-        if (file.size > 5 * 1024 * 1024) throw new Error("Each image must be under 5MB");
-        if (!file.type.startsWith("image/")) throw new Error("Only image files allowed");
-        const path = `${session.user.id}/${sub.id}/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
-        const { error: upErr } = await supabase.storage.from("proofs").upload(path, file);
-        if (upErr) throw upErr;
-        await supabase.from("task_submission_proofs").insert({ submission_id: sub.id, image_url: path });
+      const uploadedPaths: string[] = [];
+      try {
+        for (const f of proofFields) {
+          if (f.type !== "image" || !files[f.id]) continue;
+          const file = files[f.id];
+          if (file.size > 5 * 1024 * 1024) throw new Error("Each image must be under 5MB");
+          if (!file.type.startsWith("image/")) throw new Error("Only image files are allowed");
+          const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+          const path = `${session.user.id}/${sub.id}/${Date.now()}-${safeName}`;
+          const { error: upErr } = await supabase.storage.from("proofs").upload(path, file, {
+            contentType: file.type,
+            cacheControl: "3600",
+            upsert: false,
+          });
+          if (upErr) throw new Error(upErr.message || "Proof image upload failed");
+          uploadedPaths.push(path);
+          const { error: proofErr } = await supabase.from("task_submission_proofs").insert({ submission_id: sub.id, image_url: path });
+          if (proofErr) throw proofErr;
+        }
+      } catch (uploadError) {
+        if (uploadedPaths.length) await supabase.storage.from("proofs").remove(uploadedPaths);
+        await supabase.from("task_submissions").delete().eq("id", sub.id).eq("user_id", session.user.id);
+        throw uploadError;
       }
 
       // Notify publisher
