@@ -230,6 +230,7 @@ function DuplicateIpWarningPanel() {
 
 function AdminInbox() {
   const [rows, setRows] = useState<any[]>([]);
+  const [unreadCounts, setUnreadCounts] = useState<Record<string, number>>({});
   const [filter, setFilter] = useState<string>("all");
   const [edit, setEdit] = useState<any | null>(null);
   const [page, setPage] = useState(1);
@@ -238,13 +239,16 @@ function AdminInbox() {
 
 
   const load = async () => {
-    let q = supabase.from("notifications")
-      .select("*")
-      .eq("admin_targeted", true)
-      .order("created_at", { ascending: false })
-      .limit(300);
-    if (filter !== "all") q = q.eq("type", filter);
-    const { data } = await q;
+    const [{ data: unread }, { data }] = await Promise.all([
+      supabase.from("notifications").select("type").eq("admin_targeted", true).eq("read", false),
+      (filter === "all"
+        ? supabase.from("notifications").select("*").eq("admin_targeted", true)
+        : supabase.from("notifications").select("*").eq("admin_targeted", true).eq("type", filter)
+      ).order("created_at", { ascending: false }).limit(300),
+    ]);
+    const counts: Record<string, number> = {};
+    for (const row of unread ?? []) counts[row.type] = (counts[row.type] ?? 0) + 1;
+    setUnreadCounts(counts);
     setRows(await withNotificationUsers(data ?? []));
   };
 
@@ -277,9 +281,17 @@ function AdminInbox() {
     <div className="mt-4 space-y-4">
       <DuplicateIpWarningPanel />
       <div className="flex items-center gap-2 mb-4 flex-wrap">
-        {["all", "appeal", "payment", "system", "warning", "error", "duplicate_ip"].map(f => (
-          <Button key={f} size="sm" variant={filter === f ? "default" : "secondary"} onClick={() => setFilter(f)}>{f}</Button>
-        ))}
+        {["all", "appeal", "payment", "system", "warning", "error", "duplicate_ip"].map(f => {
+          const count = f === "all"
+            ? Object.values(unreadCounts).reduce((sum, value) => sum + value, 0)
+            : unreadCounts[f] ?? 0;
+          return (
+            <Button key={f} size="sm" variant={filter === f ? "default" : "secondary"} onClick={() => setFilter(f)}>
+              {f}
+              {count > 0 && <span className="ml-2 rounded-full bg-destructive px-1.5 py-0.5 text-[10px] leading-none text-destructive-foreground">{count > 99 ? "99+" : count}</span>}
+            </Button>
+          );
+        })}
       </div>
       <Card><CardContent className="p-0">
         {rows.length === 0 ? <EmptyState message="No admin notifications." /> : (
