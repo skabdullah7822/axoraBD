@@ -43,8 +43,28 @@ function ensureAdsenseScript(client: string) {
  */
 function injectSnippet(container: HTMLElement, snippet: string) {
   container.innerHTML = "";
+  const value = snippet.trim();
+
+  // Adsterra Smartlink/direct-link units are URLs, not executable snippets.
+  // Render them as a safe sponsored link instead of inserting the URL as text.
+  try {
+    const url = new URL(value);
+    if (url.protocol === "https:") {
+      const link = document.createElement("a");
+      link.href = url.toString();
+      link.target = "_blank";
+      link.rel = "sponsored noopener noreferrer";
+      link.textContent = "View sponsored offer";
+      link.className = "inline-flex min-h-10 items-center justify-center rounded-md bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:opacity-90";
+      container.appendChild(link);
+      return;
+    }
+  } catch {
+    // The value is a raw provider snippet; continue with script parsing below.
+  }
+
   const wrap = document.createElement("div");
-  wrap.innerHTML = snippet;
+  wrap.innerHTML = value;
   Array.from(wrap.childNodes).forEach((node) => {
     if (node.nodeName === "SCRIPT") {
       const old = node as HTMLScriptElement;
