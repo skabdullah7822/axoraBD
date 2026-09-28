@@ -24,18 +24,21 @@ function ReferralsPage() {
   const { profile, isActive } = useProfile();
   const [earnings, setEarnings] = useState<any[]>([]);
   const [referred, setReferred] = useState<any[]>([]);
+  const [duplicateCount, setDuplicateCount] = useState(0);
   const [settings, setSettings] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   const load = async () => {
     if (!session?.user) return;
-    const [e, r, s] = await Promise.all([
+    const [e, r, summary, s] = await Promise.all([
       supabase.from("referral_earnings").select("*").eq("referrer_id", session.user.id).order("created_at", { ascending: false }),
       supabase.rpc("get_my_referrals" as any),
+      supabase.rpc("get_my_referral_summary" as any),
       supabase.from("settings").select("*").limit(1).maybeSingle(),
     ]);
     setEarnings(e.data ?? []);
     setReferred((r.data as any[]) ?? []);
+    setDuplicateCount(Number((summary.data as any[])?.[0]?.duplicate_count ?? 0));
     setSettings(s.data);
     setLoading(false);
   };
@@ -90,6 +93,17 @@ function ReferralsPage() {
           </>
         )}
       </div>
+
+      {duplicateCount > 0 && (
+        <Card className="mb-6 border-warning/30 bg-warning/10">
+          <CardContent className="p-4">
+            <p className="font-semibold text-warning">Duplicate accounts were not counted</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              You opened {duplicateCount} duplicate account{duplicateCount === 1 ? "" : "s"} from the same IP address. These accounts were not added to your valid referral count, and no referral bonus was awarded for them.
+            </p>
+          </CardContent>
+        </Card>
+      )}
 
       <Card className="mb-6 bg-gradient-to-br from-primary/10 to-transparent border-primary/30">
         <CardHeader><CardTitle>Your referral link</CardTitle></CardHeader>
