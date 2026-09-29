@@ -2,7 +2,7 @@
   "name": "AxoraBD - Earn Online in Bangladesh",
   "short_name": "AxoraBD",
   "description": "Bangladesh's trusted micro-task & earning platform. Complete tasks, earn rewards, withdraw easily.",
-  "start_url": "/dashboard",
+  "start_url": "/app/dashboard",
   "scope": "/",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone"],
